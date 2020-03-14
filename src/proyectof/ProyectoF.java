@@ -1,6 +1,8 @@
 
 package proyectof;
 
+import vista.ventanaPrincipiante;
+
 public class ProyectoF {
 
     
@@ -8,7 +10,8 @@ public class ProyectoF {
         
         
         
-        
+        ventanaPrincipiante n = new ventanaPrincipiante();
+        n.setVisible(true);
         
         
         
