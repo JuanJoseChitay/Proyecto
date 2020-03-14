@@ -19,19 +19,48 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
     public ventanaPrincipiante() {
         initComponents();
     }
-    
+
     Random ra = new Random();// creando un objeto de la clas Random con el nombre de ra
+
+    int numero1Suma1 = ra.nextInt(20);
+    int numero2Suma1 = ra.nextInt(20);
+    int numero1Suma2 = ra.nextInt(20);
+    int numero2Suma2 = ra.nextInt(20);
+
+    int numero1Resta1 = ra.nextInt(20);
+    int numero2Resta1 = ra.nextInt(20);
+    int numero1Resta2 = ra.nextInt(20);
+    int numero2Resta2 = ra.nextInt(20);
     
-    int n1 = ra.nextInt(20);
-    int n2 = ra.nextInt(20);
+    
+    int numero1Multiplicacion1 = ra.nextInt(20);
+    int numero2Multiplicacion1 = ra.nextInt(20);
+    int numero1Multiplicacion2 = ra.nextInt(20);
+    int numero2Multiplicacion2 = ra.nextInt(20);
+    
+    
+    
+    
+    
+
     int r1 = 0;
 
     public int sumar(int num1, int num2) {
-        
-        this.n1 = num1;
-        this.n2 = num2;
 
-        r1 = n1 + n2;
+        this.numero1Suma1 = num1;
+        this.numero2Suma1 = num2;
+
+        r1 = numero1Suma1 + numero2Suma1;
+
+        return r1;
+
+    }
+
+    public int restar(int num1, int num2) {
+        this.numero1Suma1 = num1;
+        this.numero2Suma1 = num2;
+
+        r1 = numero1Suma1 - numero2Suma1;
 
         return r1;
 
@@ -223,15 +252,19 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
 
     private void botonMostrarPrincipianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrarPrincipianteActionPerformed
 
-        labelSumaPrincipiante1.setText(+n1 + "+" + n2);
+        labelSumaPrincipiante1.setText(+numero1Suma1 + "+" + numero2Suma1);
+        labelSumaPrincipiante2.setText(+numero1Suma2 + "+" + numero2Suma2);
+        labelRestaPrincipiante1.setText(+numero1Resta1 + "-" + numero2Resta1);
+        labelRestaPrincipiante2.setText(+numero1Resta2 + "-" + numero2Resta2);
+        labelMultiplicacionPrincipiante1.setText(+numero1Multiplicacion1+ "*"+numero2Multiplicacion1);
+        labelMultiplicacionPrincipiante2.setText(+numero1Multiplicacion2+ "*"+numero2Multiplicacion2);
 
 
     }//GEN-LAST:event_botonMostrarPrincipianteActionPerformed
 
     private void botonEnviarPrincipianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarPrincipianteActionPerformed
 
-        int num = this.sumar(n1, n2);
-        System.out.println(num);
+        int num = this.sumar(numero1Suma1, numero2Suma1);
         int perro = Integer.parseInt(txtResultadoSuma1.getText());
         if (num == perro) {
             System.out.println("son iguales");
