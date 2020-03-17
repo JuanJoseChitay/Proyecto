@@ -4,6 +4,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import javax.swing.JOptionPane;
 import modelo.Avanzado;
 import vista.ventanaAvanzado;
 
@@ -25,20 +26,51 @@ public class AvanzadoCon implements ActionListener{
         
         venA.botonEnviarAvanzado.addActionListener(this);
         venA.labelNumeroAleatorio.setText("?");
+        
+        
+        venA.labelPalabraAvanzado1.setText("Car");
+        venA.labelPalabraAvanzado2.setText("Sleep ");
+        venA.labelPalabraAvanzado3.setText("Shape");
+        
+        
     }
     
     public void comparar(){
      
-        int perro= Integer.parseInt(venA.txtRespuestaAvanzado.getText());
+       
+      
         
-        if (numeroAleatorio==perro) {
-            System.out.println("son iguales");
+       
+        try {
+            
+             int numeroA= Integer.parseInt(venA.txtRespuestaAvanzado.getText());
+             if (numeroAleatorio==numeroA) {
+            venA.labelMensaje.setText("¡¡Felicitaciones!!");
+        }else{
+        venA.labelMensaje.setText("Intentalo de nuevo :( ");
+        
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"llena todo los campos");
         }
         
         
+        
+        
+       
+        
+        
+        if (venA.txtPalabraAvanzado1.getText().equals("Carro")) {
+            
+            venA.labelpalabra1.setText("correcto");
+            
+        }else{
+        venA.labelpalabra1.setText("Incorrecto");
+        }
     
-    
-    
+//    
+        
+        
     }
     
     
@@ -48,6 +80,7 @@ public class AvanzadoCon implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==this.venA.botonEnviarAvanzado) {
             comparar();
+            
         }
         
         
