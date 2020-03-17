@@ -1,26 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
+import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Admin
- */
 public class ventanaPrincipiante extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ventanaPrincipiante
-     */
     public ventanaPrincipiante() {
         initComponents();
+
     }
 
-    Random ra = new Random();// creando un objeto de la clas Random con el nombre de ra
+    ArrayList<Object> respuesta = new ArrayList<>();
+  Object[] respuestas = new Object[15];
+    Random ra = new Random();// creando un objeto de la clase Random con el nombre de ra
 
     int numero1Suma1 = ra.nextInt(20);
     int numero2Suma1 = ra.nextInt(20);
@@ -31,19 +24,18 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
     int numero2Resta1 = ra.nextInt(20);
     int numero1Resta2 = ra.nextInt(20);
     int numero2Resta2 = ra.nextInt(20);
-    
-    
+
     int numero1Multiplicacion1 = ra.nextInt(20);
     int numero2Multiplicacion1 = ra.nextInt(20);
     int numero1Multiplicacion2 = ra.nextInt(20);
     int numero2Multiplicacion2 = ra.nextInt(20);
-    
-    
-    
-    
-    
 
     int r1 = 0;
+    int r2 = 0;
+    int r3 = 0;
+    int r4 = 0;
+    int r5 = 0;
+    int r6 = 0;
 
     public int sumar(int num1, int num2) {
 
@@ -56,13 +48,54 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
 
     }
 
+    public int sumar2(int num1, int num2) {
+
+        this.numero1Suma2 = num1;
+        this.numero2Suma2 = num2;
+
+        r2 = numero1Suma2 + numero2Suma2;
+
+        return r2;
+
+    }
+
     public int restar(int num1, int num2) {
-        this.numero1Suma1 = num1;
-        this.numero2Suma1 = num2;
+        this.numero1Resta1 = num1;
+        this.numero2Resta1 = num2;
 
-        r1 = numero1Suma1 - numero2Suma1;
+        r3 = numero1Resta1 - numero2Resta1;
 
-        return r1;
+        return r3;
+
+    }
+
+    public int restar2(int num1, int num2) {
+        this.numero1Resta2 = num1;
+        this.numero2Resta2 = num2;
+
+        r4 = numero1Resta2 - numero2Resta2;
+
+        return r4;
+
+    }
+
+    public int Multiplicacion(int num1, int num2) {
+        this.numero1Multiplicacion1 = num1;
+        this.numero2Multiplicacion1 = num2;
+
+        r5 = numero1Multiplicacion1 * numero2Multiplicacion1;
+
+        return r5;
+
+    }
+
+    public int Multiplicacion2(int num1, int num2) {
+        this.numero1Multiplicacion2 = num1;
+        this.numero2Multiplicacion2 = num2;
+
+        r6 = numero1Multiplicacion2 * numero2Multiplicacion2;
+
+        return r6;
 
     }
 
@@ -97,17 +130,9 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
 
         jLabel2.setText("*SUMAS");
 
-        labelSumaPrincipiante1.setText("jLabel4");
-
         jLabel4.setText("Resuelva Operaciones Aritmeticas Aleatorias");
 
-        labelSumaPrincipiante2.setText("jLabel5");
-
         jLabel6.setText("*RESTAS");
-
-        labelRestaPrincipiante1.setText("jLabel7");
-
-        labelRestaPrincipiante2.setText("jLabel8");
 
         txtResultadoResta2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,10 +141,6 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
         });
 
         jLabel9.setText("*MULTIPLICACION");
-
-        labelMultiplicacionPrincipiante1.setText("jLabel10");
-
-        labelMultiplicacionPrincipiante2.setText("jLabel11");
 
         txtResultadoMultiplicacion2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,22 +277,115 @@ public class ventanaPrincipiante extends javax.swing.JFrame {
         labelSumaPrincipiante2.setText(+numero1Suma2 + "+" + numero2Suma2);
         labelRestaPrincipiante1.setText(+numero1Resta1 + "-" + numero2Resta1);
         labelRestaPrincipiante2.setText(+numero1Resta2 + "-" + numero2Resta2);
-        labelMultiplicacionPrincipiante1.setText(+numero1Multiplicacion1+ "*"+numero2Multiplicacion1);
-        labelMultiplicacionPrincipiante2.setText(+numero1Multiplicacion2+ "*"+numero2Multiplicacion2);
+        labelMultiplicacionPrincipiante1.setText(+numero1Multiplicacion1 + "*" + numero2Multiplicacion1);
+        labelMultiplicacionPrincipiante2.setText(+numero1Multiplicacion2 + "*" + numero2Multiplicacion2);
 
 
     }//GEN-LAST:event_botonMostrarPrincipianteActionPerformed
 
     private void botonEnviarPrincipianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarPrincipianteActionPerformed
 
-        int num = this.sumar(numero1Suma1, numero2Suma1);
-        int perro = Integer.parseInt(txtResultadoSuma1.getText());
-        if (num == perro) {
-            System.out.println("son iguales");
-        } else {
+        try {
+            int suma1 = this.sumar(numero1Suma1, numero2Suma1);
+            int respuesta1 = Integer.parseInt(txtResultadoSuma1.getText());
+            System.out.println(suma1);
+            int suma2 = this.sumar2(numero1Suma2, numero2Suma2);
+            System.out.println(suma2);
+            int respuesta2 = Integer.parseInt(txtResultadoSuma2.getText());
 
-            System.out.println("NO SON IGUALES MULAAAAAAAA!!!!");
+            int resta1 = this.restar(numero1Resta1, numero2Resta1);
+            int respuesta3 = Integer.parseInt(txtResultadoResta1.getText());
+            int resta2 = this.restar2(numero1Resta2, numero2Resta2);
+            int respuesta4 = Integer.parseInt(txtResultadoResta2.getText());
+
+            int multiplicacion1 = this.Multiplicacion(numero1Multiplicacion1, numero2Multiplicacion1);
+            int respuesta5 = Integer.parseInt(txtResultadoMultiplicacion1.getText());
+            int multiplicacion2 = this.Multiplicacion2(numero1Multiplicacion2, numero2Multiplicacion2);
+            int respuesta6 = Integer.parseInt(txtResultadoMultiplicacion2.getText());
+
+            for (int i = 1; i < 10; i++) {
+
+                switch (i) {
+                    case 1:
+
+                        if (suma1 == respuesta1) {
+                            respuestas[1]="correcto";
+
+                        } else {
+                           respuestas[2]="incorrecto";
+                        }
+
+                        break;
+                    case 2:
+
+                        if (suma2 == respuesta2) {
+                            respuestas[3]="correcto";
+
+                        } else {
+                           respuestas[4]="incorrecto";
+                        }
+
+                        break;
+
+                    case 3:
+
+                        if (resta1 == respuesta3) {
+                            respuestas[5]="correcto";
+
+                        } else {
+                            respuestas[6]="incorrecto";
+                        }
+                        break;
+                    case 4:
+
+                        if (resta2 == respuesta4) {
+                           respuestas[7]="correcto";
+
+                        } else {
+                            respuestas[8]="incorrecto";
+                        }
+                        break;
+                    case 5:
+
+                        if (multiplicacion1 == respuesta5) {
+                           respuestas[9]="correcto";
+
+                        } else {
+                            respuestas[10]="incorrecto";
+                        }
+                        break;
+                    case 6:
+
+                        if (multiplicacion2 == respuesta6) {
+                            respuestas[11]="correcto";
+
+                        } else {
+                          respuestas[12]="incorrecto";
+                        }
+//
+                        break;
+                    default:
+                        System.out.println("ya valio");
+                }
+
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
+
+//        for (String a : respuesta) {
+//            System.out.println(a);
+//        }
+
+
+     
+
+
+        Object  select = JOptionPane.showInputDialog(null, "respuestas ", "PUNTEO ", JOptionPane.DEFAULT_OPTION,null,respuestas,0);
+
+        respuesta.clear();
+
 
     }//GEN-LAST:event_botonEnviarPrincipianteActionPerformed
 
