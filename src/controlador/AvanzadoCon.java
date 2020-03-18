@@ -25,7 +25,7 @@ public class AvanzadoCon implements ActionListener{
         this.avac=ca;
         
         venA.botonEnviarAvanzado.addActionListener(this);
-        venA.labelNumeroAleatorio.setText("?");
+        venA.labelNumeroAleatorio.setText("*?*");
         
         
         venA.labelPalabraAvanzado1.setText("Car");
@@ -57,18 +57,41 @@ public class AvanzadoCon implements ActionListener{
         
         
         
-       
-        
-        
-        if (venA.txtPalabraAvanzado1.getText().equals("Carro")) {
+        try {
+             if (venA.txtPalabraAvanzado1.getText().equals("Carro")) {
             
             venA.labelpalabra1.setText("correcto");
             
         }else{
         venA.labelpalabra1.setText("Incorrecto");
         }
-    
-//    
+        } catch (Exception e) {
+        }
+        
+         
+        try {
+             if (venA.txtPalabraAvanzado2.getText().equals("Dormir")) {
+            
+            venA.labelpalabra2.setText("correcto");
+            
+        }else{
+        venA.labelpalabra2.setText("Incorrecto");
+        }
+        } catch (Exception e) {
+        }
+        
+        
+         
+        try {
+             if (venA.txtPalabraAvanzado3.getText().equals("Forma")) {
+            
+            venA.labelpalabra3.setText("correcto");
+            
+        }else{
+        venA.labelpalabra3.setText("Incorrecto");
+        }
+        } catch (Exception e) {
+        }  
         
         
     }

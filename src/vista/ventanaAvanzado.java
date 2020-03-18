@@ -40,8 +40,6 @@ public class ventanaAvanzado extends javax.swing.JFrame {
         labelPalabraAvanzado3 = new javax.swing.JLabel();
         txtPalabraAvanzado2 = new javax.swing.JTextField();
         txtPalabraAvanzado3 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         labelMensaje = new javax.swing.JLabel();
         labelpalabra1 = new javax.swing.JLabel();
         labelpalabra2 = new javax.swing.JLabel();
@@ -58,7 +56,7 @@ public class ventanaAvanzado extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Selecciona el numero");
+        jLabel3.setText("Ingrese un numero[0-10]");
 
         jLabel4.setText("Escribe las palabras en Español");
 
@@ -80,10 +78,6 @@ public class ventanaAvanzado extends javax.swing.JFrame {
         labelPalabraAvanzado2.setText(".");
 
         labelPalabraAvanzado3.setText(".");
-
-        jLabel9.setText("-> ");
-
-        jLabel10.setText("<-");
 
         labelpalabra1.setText(".");
 
@@ -120,24 +114,22 @@ public class ventanaAvanzado extends javax.swing.JFrame {
                                             .addComponent(labelpalabra2)
                                             .addComponent(labelpalabra3)))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtRespuestaAvanzado, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel9)
-                        .addGap(22, 22, 22)
-                        .addComponent(labelNumeroAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(149, 149, 149)
+                                .addComponent(labelNumeroAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRespuestaAvanzado, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(labelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,11 +143,8 @@ public class ventanaAvanzado extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNumeroAleatorio)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10))
-                .addGap(26, 26, 26)
+                .addComponent(labelNumeroAleatorio)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtRespuestaAvanzado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -236,11 +225,9 @@ public class ventanaAvanzado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botonEnviarAvanzado;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel labelMensaje;
     public javax.swing.JLabel labelNumeroAleatorio;
     public javax.swing.JLabel labelPalabraAvanzado1;
